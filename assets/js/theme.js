@@ -362,7 +362,15 @@ class FixIt {
     }
   }
 
-  initHighlight() {
+  /**
+   * init code wrapper
+   */
+  initCodeWrapper() {
+    if (!this.config.code) {
+      this.initCopyCode();
+      return
+    }
+    // if markup.highlight.lineNumbersInTable set to false
     this.util.forEach(document.querySelectorAll('.highlight > pre.chroma'), ($preChroma) => {
       const $chroma = document.createElement('div');
       $chroma.className = $preChroma.className;
@@ -377,8 +385,13 @@ class FixIt {
       $preChroma.parentElement.replaceChild($chroma, $preChroma);
       $td.appendChild($preChroma);
     });
+    // render code header
     this.util.forEach(document.querySelectorAll('.highlight > .chroma:not([data-init])'), ($chroma) => {
       $chroma.dataset.init = 'true';
+      if ($chroma.parentElement.classList.contains('no-header')) {
+        this.initCopyCode($chroma);
+        return;
+      }
       const $codeElements = $chroma.querySelectorAll('pre.chroma > code');
       if ($codeElements.length) {
         const $code = $codeElements[$codeElements.length - 1];
@@ -438,8 +451,15 @@ class FixIt {
           $copy.insertAdjacentHTML('afterbegin', '<i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i>');
           $copy.classList.add('copy');
           // remove the leading and trailing whitespace of the code string
-          const code = $code.innerText.trim();
-          if (this.config.code.maxShownLines < 0 || code.split('\n').length < this.config.code.maxShownLines + 2) {
+          let code = $code.innerText.trim();
+          // in the details element, the code string cannot be gotten directly.
+          if ($chroma.closest('details') !== null) {
+            const _tempEl = document.createElement('div');
+            _tempEl.appendChild($code.cloneNode(true));
+            code = _tempEl.innerText.trim();
+          }
+          const forceOpen = $chroma.parentElement.dataset.open ? JSON.parse($chroma.parentElement.dataset.open) : void 0;
+          if (forceOpen ?? (this.config.code.maxShownLines < 0 || code.split('\n').length < this.config.code.maxShownLines + 2)) {
             $chroma.classList.add('open');
           }
           $copy.title = this.config.code.copyTitle;
@@ -467,18 +487,21 @@ class FixIt {
   }
 
   /**
+   * init simple copy code when there is no code header
+   * https://github.com/github/clipboard-copy-element
+   * @param {ELement} singleCode single code block
+   */
+  initCopyCode(singleCode) {
+    // TODO
+  }
+
+  /**
    * init table of contents
    */
   initToc() {
-    let $tocCore = document.getElementById('TableOfContents');
+    const $tocCore = document.getElementById('TableOfContents');
     if ($tocCore === null) {
       return;
-    }
-    // It's a dirty hack to fix the bug of APlayer, see https://github.com/hugo-fixit/FixIt/issues/292
-    if (typeof APlayer === 'function') {
-      const $newTocCore = $tocCore.cloneNode(true);
-      $tocCore.parentElement.replaceChild($newTocCore, $tocCore);
-      $tocCore = $newTocCore;
     }
     if (document.getElementById('toc-static').dataset.kept === 'true' || this.util.isTocStatic()) {
       const $tocContentStatic = document.getElementById('toc-content-static');
@@ -548,6 +571,27 @@ class FixIt {
       this.util.animateCSS($tocContentAuto, animation, true);
       $toc.classList.toggle('toc-hidden');
     }, false);
+  }
+
+  /**
+   * It's a dirty hack to fix the bug of APlayer and smoothScroll. 
+   * see https://github.com/hugo-fixit/FixIt/issues/292
+   */
+  fixTocScroll() {
+    if (typeof APlayer === 'function') {
+      // remove APlayer click event listener of the toc link
+      let $tocCore = document.getElementById('TableOfContents');
+      if ($tocCore) {
+        const $newTocCore = $tocCore.cloneNode(true);
+        $tocCore.parentElement.replaceChild($newTocCore, $tocCore);
+        $tocCore = $newTocCore;
+      }
+      // remove APlayer click event listener of the heading mark
+      this.util.forEach(document.querySelectorAll('.heading-mark'), ($headingMark) => {
+        const $newHeadingMark = $headingMark.cloneNode(true);
+        $headingMark.parentElement.replaceChild($newHeadingMark, $headingMark);
+      });
+    }
   }
 
   initMath(target = document.body) {
@@ -870,7 +914,7 @@ class FixIt {
   }
 
   initCookieconsent() {
-    this.config.cookieconsent && cookieconsent.initialise(this.config.cookieconsent);
+    this.config.cookieconsent && window.cookieconsent?.initialise(this.config.cookieconsent);
   }
 
   getSiteTime = () => {
@@ -961,7 +1005,7 @@ class FixIt {
         this.initTwemoji();
         this.initDetails();
         this.initLightGallery();
-        this.initHighlight();
+        this.initCodeWrapper();
         this.initTable();
         this.initMath();
         this.initMermaid();
@@ -971,6 +1015,7 @@ class FixIt {
         this.initToc();
         this.initTocListener();
         this.initPangu();
+        this.fixTocScroll();
         this.util.forEach(document.querySelectorAll('.encrypted-hidden'), ($element) => {
           $element.classList.replace('encrypted-hidden', 'decrypted-shown');
         });
@@ -979,7 +1024,7 @@ class FixIt {
         this.initTwemoji($content);
         this.initDetails($content);
         this.initLightGallery();
-        this.initHighlight();
+        this.initCodeWrapper();
         this.initTable($content);
         this.initMath($content);
         this.initMermaid();
@@ -1200,7 +1245,7 @@ class FixIt {
         this.initTwemoji();
         this.initDetails();
         this.initLightGallery();
-        this.initHighlight();
+        this.initCodeWrapper();
         this.initTable();
         this.initMath();
         this.initMermaid();
@@ -1228,6 +1273,7 @@ class FixIt {
         if (!this.config.encryption?.all) {
           this.initToc();
           this.initTocListener();
+          this.fixTocScroll();
         }
         this.onScroll();
         this.onResize();

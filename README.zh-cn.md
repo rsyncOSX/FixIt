@@ -1,7 +1,7 @@
 # FixIt 主题 | Hugo
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-fixit/FixIt?style=flat)](https://github.com/hugo-fixit/FixIt/releases)
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.123.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.127.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/hugo-fixit/FixIt?style=flat)](/LICENSE)
 
 👉 [English README](README.md) | 简体中文说明
@@ -86,8 +86,9 @@
 - 支持**上标注释**的扩展 Markdown 语法
 - 支持**分数**的扩展 Markdown 语法
 - 支持基于 [KaTeX](https://katex.org/) 的**数学公式**
-- 支持基于 [mermaid](https://github.com/knsv/mermaid) 的**图表** shortcode
-- 支持基于 [ECharts](https://echarts.apache.org/) 的**交互式数据可视化** shortcode
+- 支持基于 [mermaid](https://github.com/knsv/mermaid) 的**图表** 代码块扩展语法和 shortcode
+- 支持基于 [ECharts](https://echarts.apache.org/) 的**交互式数据可视化** 代码块扩展语法和 shortcode
+- 支持 **Timeline** 的代码块扩展语法和 shortcode
 - 支持基于 [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js) 的 **Mapbox** shortcode
 - 支持基于 [APlayer](https://github.com/MoePlayer/APlayer) 和 [MetingJS](https://github.com/metowolf/MetingJS) 的**音乐播放器** shortcode
 - 支持 **Bilibili 视频** 和 **抖音视频** shortcode
@@ -128,13 +129,25 @@ FixIt 支持下列语言：
 
 [语言兼容性](https://fixit.lruihao.cn/zh-cn/theme-documentation-basics/#language-compatibility)
 
-## [路线图](https://github.com/hugo-fixit/FixIt/projects/1)
+## 社区支持
 
-## 问题、想法、bugs 和 PRs
+所有的反馈都是欢迎的！详见 [Discussions][discussions]、[Pull requests][pulls] 和 [Issues][issues]。
 
-所有的反馈都是欢迎的！详见 [议题](https://github.com/hugo-fixit/FixIt/issues) 或者 [讨论](https://github.com/hugo-fixit/FixIt/discussions) 或者加入 QQ 群：`814031017`。
+| 社区                         | 说明                    |
+| :--------------------------- | :---------------------- |
+| [Discussions][discussions]   | 官方 GitHub 讨论区      |
+| [FixIt 主题交流群][qq-group] | 官方 QQ 群：`814031017` |
+| [Hugo FixIt 星球][zsxq]      | 官方知识星球            |
+
+[discussions]: https://github.com/hugo-fixit/FixIt/discussions
+[pulls]: https://github.com/hugo-fixit/FixIt/pulls
+[issues]: https://github.com/hugo-fixit/FixIt/issues
+[qq-group]: https://qm.qq.com/cgi-bin/qm/qr?k=awbwdTtSQ_-H5QGzeJxdWgv6JMbNehNM&jump_from=webapi
+[zsxq]: https://t.zsxq.com/oZYCt
 
 ## 参与贡献
+
+- [Hugo FixIt 路线图](https://github.com/orgs/hugo-fixit/projects/2)
 
 请参阅 [CONTRIBUTING.md](CONTRIBUTING.md) 以了解贡献该项目的基本信息。
 
@@ -212,9 +225,9 @@ Follow [Lruihao](https://github.com/Lruihao "在 GitHub 上关注我")
 
 如果你喜爱这个主题，请考虑给我买杯咖啡 ☕️，谢谢！
 
-- [PayPal](https://paypal.me/Lruihao)
-- [支付宝](images/alipay.jpg)
 - [微信支付](images/wechatpay.jpg)
+- [支付宝](images/alipay.jpg)
+- [PayPal](https://paypal.me/Lruihao)
 
 如果你喜欢这个主题，别忘了留下一颗 ⭐️ 哦，谢谢！
 

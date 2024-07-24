@@ -63,6 +63,8 @@ enableEmoji = true
       icon = "fa-solid fa-archive"
       # FixIt 0.2.16 | NEW set menu item type, optional values: ["mobile", "desktop"]
       type = ""
+      # FixIt 0.3.9 | NEW whether to show the submenu item divider line
+      divided = false
   [[menu.main]]
     identifier = "categories"
     parent = ""
@@ -133,7 +135,7 @@ enableEmoji = true
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.123.0"
+    min = "0.127.0"
 
 # -------------------------------------------------------------------------------------
 # Markup related configuration in Hugo
@@ -152,18 +154,41 @@ enableEmoji = true
     ########## necessary configurations ##########
     guessSyntax = true
   # Goldmark is from Hugo 0.60 the default library used for Markdown
+  # https://gohugo.io/getting-started/configuration-markup/#goldmark
   [markup.goldmark]
+    duplicateResourceFiles = false
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
       linkify = true
-      strikethrough = true
+      linkifyProtocol = 'https'
+      strikethrough = false
       table = true
       taskList = true
       typographer = true
+      # https://gohugo.io/getting-started/configuration-markup/#extras
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.delete]
+          enable = true
+        [markup.goldmark.extensions.extras.insert]
+          enable = true
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
+        [markup.goldmark.extensions.extras.subscript]
+          enable = true
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
+    # TODO passthrough refactor https://gohugo.io/getting-started/configuration-markup/#parserattributeblock
+    # TODO hugo 0.122.0 https://gohugo.io/content-management/mathematics/
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
     [markup.goldmark.renderer]
+      hardWraps = false
       # whether to use HTML tags directly in the document
       unsafe = true
+      xhtml = false
   # Table Of Contents settings
   [markup.tableOfContents]
     ordered = false
@@ -800,8 +825,9 @@ enableEmoji = true
     hiddenFromRelated = false
     # whether to enable twemoji
     twemoji = false
-    # whether to enable lightgallery
-    # FixIt 0.2.18 | CHANGED if set to "force", images in the content will be forced to shown as the gallery.
+    # FixIt 0.2.18 | CHANGED whether to enable lightgallery
+    # set to true, images in the content will be shown as the gallery if the image has a title, e.g. ![alt](src "title")
+    # set to "force", images in the content will be forced to shown as the gallery regardless of the image has a title or not, e.g. ![alt](src)
     lightgallery = false
     # whether to enable the ruby extended syntax
     ruby = true
@@ -892,11 +918,13 @@ enableEmoji = true
       copyTex = true
       # KaTeX extension mhchem
       mhchem = true
-    # Code config
+    # Code wrapper config
     [params.page.code]
-      # whether to show the copy button of the code block
+      # FixIt 0.3.9 | NEW whether to enable the code wrapper
+      enable = true
+      # whether to show the copy button of the code wrapper
       copy = true
-      # FixIt 0.2.13 | NEW whether to show the edit button of the code block
+      # FixIt 0.2.13 | NEW whether to show the edit button of the code wrapper
       edit = true
       # the maximum number of lines of displayed code by default
       maxShownLines = 10

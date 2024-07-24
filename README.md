@@ -1,7 +1,7 @@
 # FixIt Theme | Hugo
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-fixit/FixIt?style=flat)](https://github.com/hugo-fixit/FixIt/releases)
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.123.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.127.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/hugo-fixit/FixIt?style=flat)](/LICENSE)
 
 👉 English README | [简体中文说明](README.zh-cn.md)
@@ -86,8 +86,9 @@ To see this theme in action, here are some [live demo sites](https://fixit.lruih
 - Extended Markdown syntax for **ruby annotation**
 - Extended Markdown syntax for **fraction**
 - **Mathematical formula** supported by [KaTeX](https://katex.org/)
-- **Diagrams** shortcode supported by [mermaid](https://github.com/knsv/mermaid)
-- **Interactive data visualization** shortcode supported by [ECharts](https://echarts.apache.org/)
+- **Diagrams** code fences extended and shortcode supported by [mermaid](https://github.com/knsv/mermaid)
+- **Interactive data visualization** shortcode and code fences extended supported by [ECharts](https://echarts.apache.org/)
+- **Timeline** code fences extended and shortcode supported
 - **Mapbox** shortcode supported by [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js)
 - **Music player** shortcode supported by [APlayer](https://github.com/MoePlayer/APlayer) and [MetingJS](https://github.com/metowolf/MetingJS)
 - **Bilibili player** and **Douyin player** shortcode
@@ -128,13 +129,25 @@ FixIt supports the following languages:
 
 [Languages Compatibility](https://fixit.lruihao.cn/documentation/basics/#language-compatibility)
 
-## [Roadmap](https://github.com/hugo-fixit/FixIt/projects/1)
+## Community
 
-## Questions, ideas, bugs, pull requests
+All feedback is welcome! Head over to the [discussions][discussions], [Pull requests][pulls] and [issues][issues] tracker.
 
-All feedback is welcome! Head over to the [issues](https://github.com/hugo-fixit/FixIt/issues) or [discussions](https://github.com/hugo-fixit/FixIt/discussions) tracker.
+| Community                  | Description                      |
+| :------------------------- | :------------------------------- |
+| [Discussions][discussions] | Official GitHub discussion forum |
+| [FixIt QQ group][qq-group] | Official QQ group: `814031017`   |
+| [Hugo FixIt Planet][zsxq]  | Official Knowledge Planet        |
+
+[discussions]: https://github.com/hugo-fixit/FixIt/discussions
+[pulls]: https://github.com/hugo-fixit/FixIt/pulls
+[issues]: https://github.com/hugo-fixit/FixIt/issues
+[qq-group]: https://qm.qq.com/cgi-bin/qm/qr?k=awbwdTtSQ_-H5QGzeJxdWgv6JMbNehNM&jump_from=webapi
+[zsxq]: https://t.zsxq.com/oZYCt
 
 ## Contributing
+
+- [Roadmap of FixIt](https://github.com/orgs/hugo-fixit/projects/2)
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for getting started with the contribution.
 
@@ -208,9 +221,9 @@ Follow [Lruihao](https://github.com/Lruihao "Follow me on GitHub")
 
 If you enjoy the theme, please consider buying me a coffee ☕️. Thanks!
 
-- [PayPal](https://paypal.me/Lruihao)
-- [Alipay](images/alipay.jpg)
 - [Wechat](images/wechatpay.jpg)
+- [Alipay](images/alipay.jpg)
+- [PayPal](https://paypal.me/Lruihao)
 
 Don't forget to leave a ⭐️ if you like this theme, thanks!
 
