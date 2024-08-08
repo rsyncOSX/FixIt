@@ -3,6 +3,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-fixit/FixIt?style=flat)](https://github.com/hugo-fixit/FixIt/releases)
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.127.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/hugo-fixit/FixIt?style=flat)](/LICENSE)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/hugo-fixit/FixIt)
 
 👉 [English README](README.md) | 简体中文说明
 
@@ -133,17 +134,21 @@ FixIt 支持下列语言：
 
 所有的反馈都是欢迎的！详见 [Discussions][discussions]、[Pull requests][pulls] 和 [Issues][issues]。
 
-| 社区                         | 说明                    |
-| :--------------------------- | :---------------------- |
-| [Discussions][discussions]   | 官方 GitHub 讨论区      |
-| [FixIt 主题交流群][qq-group] | 官方 QQ 群：`814031017` |
-| [Hugo FixIt 星球][zsxq]      | 官方知识星球            |
+| 官方社区                           | 说明                            |
+| :--------------------------------- | :------------------------------ |
+| [Discussions][discussions]         | GitHub 讨论区                   |
+| [FixIt 主题交流群（微信）][wx-mp]  | 关注「菠菜眾長」回复“FixIt”获取 |
+| [FixIt 主题交流群（QQ）][qq-group] | QQ 群：`814031017`              |
+| [Hugo FixIt 星球][zsxq]            | 付费知识星球                    |
+
+如果你喜欢这个主题，别忘了留下一颗 ⭐️ 哦，谢谢！
 
 [discussions]: https://github.com/hugo-fixit/FixIt/discussions
 [pulls]: https://github.com/hugo-fixit/FixIt/pulls
 [issues]: https://github.com/hugo-fixit/FixIt/issues
 [qq-group]: https://qm.qq.com/cgi-bin/qm/qr?k=awbwdTtSQ_-H5QGzeJxdWgv6JMbNehNM&jump_from=webapi
-[zsxq]: https://t.zsxq.com/oZYCt
+[zsxq]: https://t.zsxq.com/GgKEW
+[wx-mp]: https://lruihao.cn/images/qr-wx-mp.webp
 
 ## 参与贡献
 
@@ -190,6 +195,7 @@ FixIt 支持下列语言：
 - [cookieconsent](https://github.com/osano/cookieconsent)
 - [cell-watermark](https://github.com/Lruihao/watermark)
 - [不蒜子](http://busuanzi.ibruce.info/)
+- [Vercount](https://github.com/EvanNotFound/vercount)
 - [pangu.js](https://github.com/vinta/pangu.js)
 - [Artalk](https://artalk.js.org/)
 - [Waline](https://waline.js.org/)
@@ -215,13 +221,7 @@ FixIt 支持下列语言：
 
 FixIt 根据 **MIT** 许可协议授权。更多信息请查看 [LICENSE 文件](LICENSE)。
 
-## 作者
-
-Follow [Lruihao](https://github.com/Lruihao "在 GitHub 上关注我")
-
 ## 赞助支持
-
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/hugo-fixit/FixIt)
 
 如果你喜爱这个主题，请考虑给我买杯咖啡 ☕️，谢谢！
 
@@ -229,6 +229,9 @@ Follow [Lruihao](https://github.com/Lruihao "在 GitHub 上关注我")
 - [支付宝](images/alipay.jpg)
 - [PayPal](https://paypal.me/Lruihao)
 
-如果你喜欢这个主题，别忘了留下一颗 ⭐️ 哦，谢谢！
+## 作者
 
+[Lruihao](https://github.com/Lruihao "在 GitHub 上关注我")
+
+<!-- footnote reference definition -->
 [^1]: 主题名称趣谈：“leave it, keep it，love it，fix it”。出现又离开，爱而不得。这像不像那该死的爱情和 BUG 呢？🤣

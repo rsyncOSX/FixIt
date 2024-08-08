@@ -423,20 +423,20 @@ class FixIt {
         if (this.config.code.editable) {
           const $edit = document.createElement('span');
           $edit.classList.add('edit');
-          $edit.insertAdjacentHTML('afterbegin', `<i class="fa-solid fa-key fa-fw" title="${this.config.code.editUnLockTitle}" aria-hidden="true"></i>`);
+          $edit.insertAdjacentHTML('afterbegin', `<i class="fa-solid fa-pen-to-square fa-fw" title="${this.config.code.editUnLockTitle}" aria-hidden="true"></i>`);
           $edit.addEventListener('click', () => {
-            const $iconKey = $edit.querySelector('.fa-key');
+            const $iconKey = $edit.querySelector('.fa-pen-to-square');
             const $iconLock = $edit.querySelector('.fa-lock');
             const $preChromas = $edit.parentElement.parentElement.querySelectorAll('pre.chroma');
             const $preChroma = $preChromas.length === 2 ? $preChromas[1] : $preChromas[0];
             if ($iconKey) {
               $iconKey.classList.add('fa-lock');
-              $iconKey.classList.remove('fa-key');
+              $iconKey.classList.remove('fa-pen-to-square');
               $iconKey.title = this.config.code.editLockTitle;
               $preChroma.setAttribute('contenteditable', true);
               $preChroma.focus();
             } else {
-              $iconLock.classList.add('fa-key');
+              $iconLock.classList.add('fa-pen-to-square');
               $iconLock.classList.remove('fa-lock');
               $iconLock.title = this.config.code.editUnLockTitle;
               $preChroma.setAttribute('contenteditable', false);
@@ -738,7 +738,7 @@ class FixIt {
       Object.values(groupMap).forEach((group) => {
         const typeone = (i) => {
           const typeitElement = group[i];
-          const singleLoop = typeitElement.dataset.loop;
+          const singleData = typeitElement.dataset;
           stagingDOM.stage(typeitElement.querySelector('template').content.cloneNode(true));
           // for shortcodes usage
           let targetEle = typeitElement.firstElementChild
@@ -750,18 +750,19 @@ class FixIt {
           // create a new instance of TypeIt for each element
           const instance = new TypeIt(targetEle, {
             strings: stagingDOM.$el.querySelector('pre')?.innerHTML || stagingDOM.contentAsHtml(),
-            speed: speed,
+            speed: Number(singleData.speed) >= 0 ? Number(singleData.speed) : speed,
             lifeLike: true,
-            cursorSpeed: cursorSpeed,
-            cursorChar: cursorChar,
+            cursorSpeed: Number(singleData.cursorSpeed) >= 0 ? Number(singleData.cursorSpeed) : cursorSpeed,
+            cursorChar: singleData.cursorChar || cursorChar,
             waitUntilVisible: true,
-            loop: singleLoop ? JSON.parse(singleLoop) : loop,
+            loop: singleData.loop ? singleData.loop === 'true' : loop,
             afterComplete: () => {
+              const duration = Number(singleData.duration ?? vtypeitConfig.duration);
               if (i === group.length - 1) {
-                if (typeitConfig.duration >= 0) {
+                if (duration >= 0) {
                   window.setTimeout(() => {
                     instance.destroy();
-                  }, typeitConfig.duration);
+                  }, duration);
                 }
                 return;
               }

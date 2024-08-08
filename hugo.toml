@@ -693,11 +693,16 @@ enableEmoji = true
     # FixIt 0.2.13 | NEW watermark's fontFamily
     fontFamily = "inherit"
 
-  # FixIt 0.2.12 | NEW Busuanzi count
-  [params.ibruce]
+  # FixIt 0.3.10 | NEW Busuanzi count
+  [params.busuanzi]
+    # whether to enable busuanzi count
     enable = false
-    # Enable in post meta
-    enablePost = false
+    # busuanzi count core script source. Default is https://vercount.one/js
+    source = "https://vercount.one/js"
+    # whether to show the site views
+    siteViews = true
+    # whether to show the page views
+    pageViews = true
 
   # Site verification code config for Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
   [params.verification]
@@ -847,7 +852,7 @@ enableEmoji = true
     linkToReport = true
     # whether to show the full text content in RSS
     rssFullText = false
-    # FixIt 0.2.13 | NEW Page style ["narrow", "normal", "wide", ...]
+    # FixIt 0.3.10 | CHANGED Page style ["narrow", "normal", "wide", ...]
     pageStyle = "normal"
     # FixIt 0.2.17 | CHANGED Auto Bookmark Support
     # If true, save the reading progress when closing the page.

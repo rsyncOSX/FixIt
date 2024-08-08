@@ -210,8 +210,8 @@
 {{- end -}}
 
 {{- /* 不蒜子 */ -}}
-{{- if eq .Site.Params.ibruce.enable true -}}
-  {{- $source := "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" -}}
+{{- if .Site.Params.busuanzi.enable | and hugo.IsProduction -}}
+  {{- $source := .Site.Params.busuanzi.source | default "https://vercount.one/js" -}}
   {{- dict "Source" $source "Fingerprint" $fingerprint "Async" true "Defer" true | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 {{- end -}}
 
@@ -224,7 +224,7 @@
 {{- end -}}
 
 {{- /* PWA */ -}}
-{{- if .Site.Params.enablePWA | and hugo.IsProduction -}}
+{{- if not hugo.IsServer | and .Site.Params.enablePWA | and hugo.IsProduction -}}
   {{- $options := dict "targetPath" "service-worker.min.js" "minify" true -}}
   {{- $source := resources.Get "js/service-worker.js" | js.Build $options -}}
   {{- $_ := $source.RelPermalink -}}

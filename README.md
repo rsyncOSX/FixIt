@@ -3,6 +3,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-fixit/FixIt?style=flat)](https://github.com/hugo-fixit/FixIt/releases)
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.127.0-ff4088?style=flat&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/hugo-fixit/FixIt?style=flat)](/LICENSE)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/hugo-fixit/FixIt)
 
 👉 English README | [简体中文说明](README.zh-cn.md)
 
@@ -133,17 +134,21 @@ FixIt supports the following languages:
 
 All feedback is welcome! Head over to the [discussions][discussions], [Pull requests][pulls] and [issues][issues] tracker.
 
-| Community                  | Description                      |
-| :------------------------- | :------------------------------- |
-| [Discussions][discussions] | Official GitHub discussion forum |
-| [FixIt QQ group][qq-group] | Official QQ group: `814031017`   |
-| [Hugo FixIt Planet][zsxq]  | Official Knowledge Planet        |
+| Official Community          | Description                     |
+| :-------------------------- | :------------------------------ |
+| [Discussions][discussions]  | GitHub discussion forum         |
+| [FixIt WeChat group][wx-mp] | Follow and reply "FixIt" to get |
+| [FixIt QQ group][qq-group]  | QQ group: `814031017`           |
+| [Hugo FixIt Planet][zsxq]   | Paid knowledge Planet           |
+
+Don't forget to leave a ⭐️ if you like this theme, thanks!
 
 [discussions]: https://github.com/hugo-fixit/FixIt/discussions
 [pulls]: https://github.com/hugo-fixit/FixIt/pulls
 [issues]: https://github.com/hugo-fixit/FixIt/issues
 [qq-group]: https://qm.qq.com/cgi-bin/qm/qr?k=awbwdTtSQ_-H5QGzeJxdWgv6JMbNehNM&jump_from=webapi
-[zsxq]: https://t.zsxq.com/oZYCt
+[zsxq]: https://t.zsxq.com/GgKEW
+[wx-mp]: https://lruihao.cn/images/qr-wx-mp.webp
 
 ## Contributing
 
@@ -186,6 +191,7 @@ Thanks to all the [contributors](https://github.com/hugo-fixit/FixIt/graphs/cont
 - [cookieconsent](https://github.com/osano/cookieconsent)
 - [cell-watermark](https://github.com/Lruihao/watermark)
 - [不蒜子](http://busuanzi.ibruce.info/)
+- [Vercount](https://github.com/EvanNotFound/vercount)
 - [pangu.js](https://github.com/vinta/pangu.js)
 - [Artalk](https://artalk.js.org/)
 - [Waline](https://waline.js.org/)
@@ -211,13 +217,7 @@ Thanks to all the [contributors](https://github.com/hugo-fixit/FixIt/graphs/cont
 
 FixIt is licensed under the **MIT** license. Check the [LICENSE file](LICENSE) for details.
 
-## Author
-
-Follow [Lruihao](https://github.com/Lruihao "Follow me on GitHub")
-
 ## Sponsor
-
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/hugo-fixit/FixIt)
 
 If you enjoy the theme, please consider buying me a coffee ☕️. Thanks!
 
@@ -225,6 +225,9 @@ If you enjoy the theme, please consider buying me a coffee ☕️. Thanks!
 - [Alipay](images/alipay.jpg)
 - [PayPal](https://paypal.me/Lruihao)
 
-Don't forget to leave a ⭐️ if you like this theme, thanks!
+## Author
 
+[Lruihao](https://github.com/Lruihao "Follow me on GitHub")
+
+<!-- footnote reference definition -->
 [^1]: The theme name is interesting: "leave it, keep it, love it, fix it". Appears and leaves, loves but cannot keep. Doesn't it look like that damn love and BUG? 🤣
