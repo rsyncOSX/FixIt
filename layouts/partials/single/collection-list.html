@@ -18,19 +18,21 @@
       <div class="details-content collection-content">
         <nav>
           <ul class="collection-list">
-            {{- range $key, $value := $pages -}}
-              {{- $title := title $value.LinkTitle -}}
-              {{- if $value.LinkTitle | eq $.LinkTitle -}}
+            {{- range $key, $page := $pages -}}
+              {{- $capitalizeTitles := $page.Param "capitalizeTitles" -}}
+              {{- $title := cond $capitalizeTitles (title $page.LinkTitle) $page.LinkTitle -}}
+              {{- if $page.LinkTitle | eq $.LinkTitle -}}
                 {{- $currentKey = $key -}}
                 <li class="collection-item"><span class="active" title="{{ $title }}">{{ $title }}</span></li>
               {{- else }}
-                <li class="collection-item"><a href="{{ $value.RelPermalink }}" title="{{ $title }}">{{ $title }}</a></li>
+                <li class="collection-item"><a href="{{ $page.RelPermalink }}" title="{{ $title }}">{{ $title }}</a></li>
               {{- end }}
             {{- end -}}
           </ul>
           <div class="collection-nav-simple">
             {{- with $pages.Next $ -}}
-              <a href="{{ .RelPermalink }}" class="collection-nav-item" rel="prev" title="{{ title .LinkTitle }}">
+              {{- $capitalizeTitles := .Param "capitalizeTitles" -}}
+              <a href="{{ .RelPermalink }}" class="collection-nav-item" rel="prev" title="{{ cond $capitalizeTitles (title .LinkTitle) .LinkTitle }}">
                 {{- dict "Class" "fa-solid fa-angle-left fa-fw" | partial "plugin/icon.html" -}}
               </a>
             {{- else -}}
@@ -38,7 +40,8 @@
             {{- end -}}
             <span class="text-secondary">{{ add $currentKey 1 }}/{{ $pages.Len }}</span>
             {{- with $pages.Prev $ -}}
-              <a href="{{ .RelPermalink }}" class="collection-nav-item" rel="next" title="{{ title .LinkTitle }}">
+              {{- $capitalizeTitles := .Param "capitalizeTitles" -}}
+              <a href="{{ .RelPermalink }}" class="collection-nav-item" rel="next" title="{{ cond $capitalizeTitles (title .LinkTitle) .LinkTitle }}">
                 {{- dict "Class" "fa-solid fa-angle-right fa-fw" | partial "plugin/icon.html" -}}
               </a>
             {{- else -}}

@@ -329,6 +329,8 @@ enableEmoji = true
   enablePWA = false
   # FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
   externalIcon = false
+  # FixIt 0.3.13 | NEW whether to capitalize titles
+  capitalizeTitles = true
   # FixIt 0.3.0 | NEW whether to add site title to the title of every page
   # remember to set up your site title in `hugo.toml` (e.g. title = "title")
   withSiteTitle = true
@@ -439,6 +441,9 @@ enableEmoji = true
     enable = false
     sticky = false
     showHome = false
+    # FixIt 0.3.13 | NEW
+    separator = "/"
+    capitalize = true
 
   # FixIt 0.3.10 | NEW Post navigation config
   [params.navigation]
@@ -819,6 +824,10 @@ enableEmoji = true
     limit = 10
     # whether to show the full text content in feed.
     fullText = true
+    # Site Challenge for Follow: https://follow.is/
+    [params.feed.follow]
+      feedId = ""
+      userId = ""
 
   # FixIt 0.3.12 | NEW Custom partials config
   # Custom partials must be stored in the /layouts/partials/ directory.
